@@ -57,6 +57,17 @@ const array_video_header = [
 
 ];
 
+
+const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiNjhmMWUxM2VjYTc5OWQxMmVmNmNjZWViZjVjNjQ5MyIsInN1YiI6IjY0ZTBlNTE0MzcxMDk3MDEzOTQ4ZTM1YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.y_sZyDJi2cnH15uAdvP_VZDKBf0z9Kqa6zEqkh0PhfM';
+
+
+const headers = {
+    'Authorization': `Bearer ${apiKey}`,
+    'accept': 'application/json'
+};
+
+
 /**
  * ***********************************  Header ********************************************
  */
@@ -104,15 +115,58 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let button_show = document.createElement('a');
             button_show.classList.add('btn_header')
             button_show.href = '';
-            button_show.textContent = "Voir";
+            button_show.textContent = "Voir +";
             title_video.appendChild(button_show);
         }, 2000); // 1500 millisecondes = 1,5 secondes (durée de la transition de flou)
     }, 3000); // 2000 millisecondes = 2 secondes avant de commencer la transition de flou
 
-
-  
-
+});
 
 
 
-})
+/**
+ * ***********************************  FILMS TENDANCES ********************************************
+ */
+
+let film_tendence = document.getElementById('film_tendence');
+
+function filmPopulaire() {
+
+    var angle = 0;
+    function galleryspin(sign) {
+        spinner = document.querySelector("#spinner");
+        if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+        spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
+    }
+    const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=fr-US&page=1&sort_by=popularity.desc';
+
+    fetch(url, { method: 'GET', headers })
+        .then(response => response.json())
+        .then(data => {
+            // Le résultat de la requête est dans la variable data
+            const results = data.results;
+
+            // Parcours des données et affichage des identifiants (id) de chaque élément
+            for (let i = 0; i < results.length; i++) {
+
+
+                let img = document.createElement('div');
+                img.classList.add('img_film_tendance');
+
+                img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+
+                film_tendence.appendChild(img);
+
+            }
+
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+
+// appel de la fonction
+
+filmPopulaire();

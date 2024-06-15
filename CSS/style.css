@@ -14,7 +14,8 @@ body{
 /******* nav bar  ********/
 nav{
 
-    background-color: transparent;
+    background-color: black;
+    opacity: 0.5;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -35,7 +36,7 @@ a > img{
 }
 
 
-/****** header *********/
+/******************** header **********************************/
 
 header {
 
@@ -95,8 +96,13 @@ header video {
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
-    margin: 10px 100px;
     font-size: 1.5rem;
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex !important;
+    flex-flow: column wrap!important;
 }
 
 .btn_header:hover{
@@ -107,3 +113,45 @@ header video {
 
 }
 
+/**************** LES FILMS TENDANCES *****************************/
+
+
+
+section {
+
+    width: 100%;
+    height: 100%;
+}
+section > p {
+    
+    margin-top: 80px;
+    margin-left: 10px;
+
+}
+
+#film_tendence{
+
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+     overflow-x: scroll;
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.img_film_tendance > a{ 
+ 
+    width: 100%;
+    margin: 0 70px;
+    height: 100%;
+}
+
+
+.img_film_tendance > a > img{ 
+    
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+   
+    
+}
