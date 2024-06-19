@@ -154,7 +154,7 @@ section > p {
     
     border-radius: 10px;
     height: 100%;
-    width: 100px;
+    width: 120px;
     margin:auto;
    
     
@@ -167,7 +167,7 @@ section > p {
 }
 
 
-/***************LES SERIES TENDANCES ****************************/
+/******************* LES SERIES TENDANCES *******************************/
 
 #serie_tendence{
 
@@ -192,7 +192,7 @@ section > p {
     
     border-radius: 10px;
     height: 100%;
-    width: 150px;
+    width: 170px;
     margin:auto;
    
     
