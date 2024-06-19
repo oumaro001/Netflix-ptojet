@@ -24,8 +24,9 @@ nav{
 }
 
 nav > img{
-    max-width: 6rem;
+    max-width: 3.5em;
     margin-top: 10px;
+    opacity: 1 !important;
 }
 
 a > img{
@@ -133,25 +134,84 @@ section > p {
 
     height: 200px; /* Ajustez la hauteur selon vos besoins */
     overflow: hidden;
-     overflow-x: scroll;
-    position: relative;
+    overflow-x: scroll;
     display: flex;
     width: 100%;
+    margin-top: 20px;
 }
 
 .img_film_tendance > a{ 
  
-    width: 100%;
-    margin: 0 70px;
-    height: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0px 20px;
+  
+    
 }
 
 
-.img_film_tendance > a > img{ 
+.img_film_tendance img{ 
     
     border-radius: 10px;
     height: 100%;
-    width: 100%;
+    width: 100px;
+    margin:auto;
    
     
+}
+
+.img_film_tendance{
+
+    width: 100%;
+    
+}
+
+
+/***************LES SERIES TENDANCES ****************************/
+
+#serie_tendence{
+
+    height: 300px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.img_serie_tendance > a{ 
+ 
+  width: 100%;
+  margin: 0px 20px;
+  
+    
+}
+
+
+.img_serie_tendance img{ 
+    
+    border-radius: 10px;
+    height: 100%;
+    width: 150px;
+    margin:auto;
+   
+    
+}
+
+.img_serie_tendance{
+
+    width: 100%;
+    
+}
+
+
+
+
+/**************** FOOTER *************************/
+footer{
+
+    width: 100%;
+    height: 100px;
+    border-top: 1px solid red;
+    margin-top: 200px;
 }

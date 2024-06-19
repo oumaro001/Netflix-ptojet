@@ -132,12 +132,7 @@ let film_tendence = document.getElementById('film_tendence');
 
 function filmPopulaire() {
 
-    var angle = 0;
-    function galleryspin(sign) {
-        spinner = document.querySelector("#spinner");
-        if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
-        spinner.setAttribute("style", "-webkit-transform: rotateY(" + angle + "deg); -moz-transform: rotateY(" + angle + "deg); transform: rotateY(" + angle + "deg);");
-    }
+   
     const url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=fr-US&page=1&sort_by=popularity.desc';
 
     fetch(url, { method: 'GET', headers })
@@ -170,3 +165,45 @@ function filmPopulaire() {
 // appel de la fonction
 
 filmPopulaire();
+
+/**
+ * ***********************************  SERIES TENDANCES ********************************************
+ */
+
+
+let serie_tendence = document.getElementById('serie_tendence');
+
+function seriePopulaire() {
+
+   
+    const url = 'https://api.themoviedb.org/3/tv/popular?language=en-US&page=1';
+
+    fetch(url, { method: 'GET', headers })
+        .then(response => response.json())
+        .then(data => {
+            // Le résultat de la requête est dans la variable data
+            const results = data.results;
+
+            // Parcours des données et affichage des identifiants (id) de chaque élément
+            for (let i = 0; i < results.length; i++) {
+
+
+                let img = document.createElement('div');
+                img.classList.add('img_serie_tendance');
+
+                img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+
+                serie_tendence.appendChild(img);
+
+            }
+
+
+        })
+        .catch(error => {
+            console.error(error);
+        });
+}
+
+// appel de la fonction
+
+seriePopulaire();
