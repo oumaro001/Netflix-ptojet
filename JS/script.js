@@ -16,7 +16,7 @@ const array_video_header = [
         nom: "Deadpool",
         img: "deadpool",
         video: "deadpool",
-        titre: "Dead pool"
+        titre: "Deadpool"
         
     },
     {
@@ -51,7 +51,7 @@ const array_video_header = [
         nom: "Peaky-blinders",
         img: "Peaky-Blinders",
         video: "Peakyblindres",
-        titre: "Peaky blindres",
+        titre: "Peaky blinders",
 
     },
 
@@ -207,3 +207,58 @@ function seriePopulaire() {
 // appel de la fonction
 
 seriePopulaire();
+
+
+
+/**
+ * ***********************************  LES MIEUX NOTES ********************************************
+ */
+
+// Fonction pour trier un tableau du plus grand au plus petit nombre
+function trierTableau(arr) {
+    return arr.sort(function(a,b) {
+        return b.vote_average - a.vote_average;
+    });
+}
+
+
+
+let top_films = document.getElementById('top_films');
+
+function meilleur_film(){
+
+let url = 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=fr-FR&page=1&sort_by=popularity.desc&vote_average.gte=8&vote_average.lte=10';
+
+fetch(url, { method: 'GET', headers })
+.then(response => response.json())
+.then(data => {
+    // Le résultat de la requête est dans la variable data
+    const results = data.results;
+
+    // Tableau trier
+    let tableau_trier = trierTableau(results);
+
+    // Parcours des données et affichage des identifiants (id) de chaque élément
+    for (let i = 0; i < tableau_trier.length; i++) {
+
+
+        let img = document.createElement('div');
+        img.classList.add('img_top_film');
+
+        img.innerHTML = `<a href="film_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
+
+        top_films.appendChild(img);
+
+    }
+
+
+})
+.catch(error => {
+    console.error(error);
+});
+}
+
+// appel de la fonction
+meilleur_film();
+
+
