@@ -221,13 +221,15 @@ section > p {
     color: white !important;
     text-decoration: none !important;
     position: absolute;
-    top: 50%;
-    font-size: 9em; /* Taille de la lettre */
+    top: -5%;
+    font-size: 20em; /* Taille de la lettre */
     color: transparent !important; /* Couleur du texte transparent */
      -webkit-text-stroke: 2px white; /* Couleur et épaisseur du contour */
-     left: -20px;
+     left: -30px;
      z-index: 1;
-     opacity: 0.7;
+     opacity: 0.4;
+     text-shadow: 0px 0px 20px  white;
+    
 
 
 }
@@ -249,7 +251,7 @@ section > p {
     border-radius: 10px;
     height: 100%;
     width: 190px;
-    margin: 0px 50px;
+    margin: 0px 190px;
     
 }
 

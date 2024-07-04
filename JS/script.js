@@ -239,7 +239,7 @@ fetch(url, { method: 'GET', headers })
     let tableau_trier = trierTableau(results);
 
     // Parcours des données et affichage des identifiants (id) de chaque élément
-    for (let i = 0; i < tableau_trier.length; i++) {
+    for (let i = 0; i < 10; i++) {
 
 
         let img = document.createElement('div');
