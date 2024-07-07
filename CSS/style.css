@@ -9,6 +9,12 @@
 body{
     background-color: black;
     color:  white;
+    position: relative !important;
+}
+
+main{
+    margin-bottom: 100px !important;
+
 }
 
 /******* nav bar  ********/
@@ -45,7 +51,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    width: 100%;
     margin: 0;
 }
 
@@ -245,7 +251,6 @@ section > p {
     
 }
 
-
 .img_top_film img{ 
     
     border-radius: 10px;
@@ -261,6 +266,140 @@ section > p {
     width: 100%;
 }
 
+/**************** FILMS BIENTOT *************************/
+
+#film_bientot{
+
+    height: 370px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.img_Bientot_film > a{ 
+ 
+  width: 100%;
+  margin: 0px 20px;
+  
+}
+
+
+.img_Bientot_film img{ 
+    
+    border-radius: 10px;
+    height: 100%;
+    width: 200px;
+    margin:auto;
+   
+    
+}
+
+.img_Bientot_film{
+
+    width: 100%;
+    
+}
+
+/******************* TOP SERIES ET EMISSIONS TV *******************************/
+
+#top_series{
+
+    height: 300px; /* Ajustez la hauteur selon vos besoins */
+    overflow: hidden;
+    overflow-x: scroll;
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.img_top_serie > a > span {
+
+    color: white !important;
+    text-decoration: none !important;
+    position: absolute;
+    top: -5%;
+    font-size: 20em; /* Taille de la lettre */
+    color: transparent !important; /* Couleur du texte transparent */
+     -webkit-text-stroke: 2px rgb(215, 208, 208); /* Couleur et épaisseur du contour */
+     left: -30px;
+     z-index: 0;
+     opacity: 0.4;
+     text-shadow: 0px 0px 20px  rgb(244, 30, 30);
+    
+
+
+}
+
+.img_top_serie > a{ 
+ 
+  width: 100%;
+  margin: 0px 20px;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  
+    
+}
+
+.img_top_serie img{ 
+    
+    border-radius: 10px;
+    height: 100%;
+    width: 190px;
+    margin: 0px 190px;
+    
+}
+
+
+.img_top_serie{
+
+    width: 100%;
+}
+
+
+/******************* TOP ACTEUR ET ACTRICE *******************************/
+
+#acteur_top{
+
+    height: 100%; /* Ajustez la hauteur selon vos besoins */
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.img_top_acteur > a > span {
+
+    color: white !important;
+    font-size: 1.5em; 
+    color: white;
+    text-align: center;
+   
+}
+
+.img_top_acteur > a{ 
+    
+text-decoration: none !important;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap column;
+  
+    
+}
+
+.img_top_acteur img{ 
+    
+    border-radius: 10px;
+    height: 100%;
+    width: 190px;
+    border: 1px solid red;
+    
+}
+
 
 /**************** FOOTER *************************/
 footer{
@@ -268,5 +407,7 @@ footer{
     width: 100%;
     height: 100px;
     border-top: 1px solid red;
-    margin-top: 200px;
+    position: absolute;
+    bottom: -300px;
+    padding: 20px 0px;
 }

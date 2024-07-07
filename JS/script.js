@@ -68,6 +68,15 @@ const headers = {
 };
 
 
+// Fonction pour trier un tableau du plus grand au plus petit nombre
+function trierTableau(arr) {
+    return arr.sort(function(a,b) {
+        return b.vote_average - a.vote_average;
+    });
+}
+
+
+
 /**
  * ***********************************  Header ********************************************
  */
@@ -211,15 +220,8 @@ seriePopulaire();
 
 
 /**
- * ***********************************  LES MIEUX NOTES ********************************************
+ * ***********************************  LES FILMS MIEUX NOTES ********************************************
  */
-
-// Fonction pour trier un tableau du plus grand au plus petit nombre
-function trierTableau(arr) {
-    return arr.sort(function(a,b) {
-        return b.vote_average - a.vote_average;
-    });
-}
 
 
 
@@ -262,3 +264,129 @@ fetch(url, { method: 'GET', headers })
 meilleur_film();
 
 
+/**
+ * ***********************************  Les films qui sort Bientôt ********************************************
+ */
+
+let film_bientot = document.getElementById('film_bientot');
+
+
+function Bientôt_Film(){
+
+    let url = "https://api.themoviedb.org/3/movie/upcoming?language=fr-FR&page=1";
+    
+    fetch(url, { method: 'GET', headers })
+    .then(response => response.json())
+    .then(data => {
+        // Le résultat de la requête est dans la variable data
+        const results = data.results;
+    
+    
+        // Parcours des données et affichage des identifiants (id) de chaque élément
+        for (let i = 0; i < results.length; i++) {
+    
+    
+            let img = document.createElement('div');
+            img.classList.add('img_Bientot_film');
+    
+            img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+    
+            film_bientot.appendChild(img);
+    
+        }
+    
+    
+    })
+    .catch(error => {
+        console.error(error);
+    });
+    }
+
+// appel de la fonction
+Bientôt_Film();
+
+
+/**
+ * ***********************************  LES SERIES ET EMISSION TV MIEUX NOTES ********************************************
+ */
+
+let top_series = document.getElementById('top_series');
+
+function meilleur_series(){
+
+let url = 'https://api.themoviedb.org/3/tv/top_rated?language=fr-FR&page=1';
+
+
+fetch(url, { method: 'GET', headers })
+.then(response => response.json())
+.then(data => {
+    // Le résultat de la requête est dans la variable data
+    const results = data.results;
+
+    // Tableau trier
+    let tableau_trier = trierTableau(results);
+
+    // Parcours des données et affichage des identifiants (id) de chaque élément
+    for (let i = 0; i < 10; i++) {
+
+
+        let img = document.createElement('div');
+        img.classList.add('img_top_serie');
+
+        img.innerHTML = `<a href="film_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
+
+        top_series.appendChild(img);
+
+    }
+
+
+})
+.catch(error => {
+    console.error(error);
+});
+}
+
+// appel de la fonction
+meilleur_series();
+
+
+/**
+ * ***********************************  Acteurs et actrices en vogue ********************************************
+ */
+
+let acteur_top = document.getElementById('acteur_top');
+
+
+function acteur_tendance(){
+
+    let url = "https://api.themoviedb.org/3/person/popular?language=fr-FR&page=1";
+    
+    fetch(url, { method: 'GET', headers })
+    .then(response => response.json())
+    .then(data => {
+        // Le résultat de la requête est dans la variable data
+        const results = data.results;
+    
+    
+        // Parcours des données et affichage des identifiants (id) de chaque élément
+        for (let i = 0; i < 6; i++) {
+    
+    
+            let img = document.createElement('div');
+            img.classList.add('img_top_acteur');
+    
+            img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].profile_path}"><span>${results[i].name}</span></a>`
+    
+            acteur_top.appendChild(img);
+    
+        }
+    
+    
+    })
+    .catch(error => {
+        console.error(error);
+    });
+    }
+
+// appel de la fonction
+acteur_tendance();
