@@ -80,23 +80,24 @@ function trierTableau(arr) {
  */
 
 let page_acceuil = document.getElementById('page_acceuil'); /** le contenu de la page */
-let video_container = document.querySelector('.video-container'); /* div de la video logo */
+let image_container = document.querySelector('.image-container'); /* div de la video logo */
 
 document.addEventListener('DOMContentLoaded', (event) => { 
 
     setTimeout(() => {
 
-        video_container.style.display = "block";
+        image_container.style.display = "block";
 
         setTimeout(() => {
             
-            video_container.style.display = "none";
+            image_container.style.display = "none";
             page_acceuil.style.display = "block";
-            page_acceuil.style.transition = "2s all"
+            
+
 
 
             
-        }, 4000); //  durée de la video
+        }, 3915); //  durée de l'image GIF
     }, 200); // durés avant l'affichage de la page d'acceuil
 
 });
