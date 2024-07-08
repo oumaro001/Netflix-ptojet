@@ -368,14 +368,13 @@ section > p {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: space-evenly;
 }
 
 .img_top_acteur > a > span {
 
     color: white !important;
-    font-size: 1.5em; 
+    font-size: 1.2em; 
     color: white;
     text-align: center;
    
@@ -384,7 +383,6 @@ section > p {
 .img_top_acteur > a{ 
     
 text-decoration: none !important;
-  width: 100%;
   display: flex;
   flex-flow: wrap column;
   margin: 10px 20px ;
@@ -419,8 +417,8 @@ footer{
     position: absolute;
     bottom: -300px;
     padding: 20px 0px;
-    display: flex;
-    flex-flow: wrap ;
+    
+    
 }
 
 
@@ -430,13 +428,15 @@ footer > section {
     justify-content: space-around;
     flex-flow:  wrap  !important;
     width: 100%;
+    margin-bottom: 100px;
 }
 
 footer > section > div {
 
-    margin: 30px 50px;
     display: flex;
     flex-flow:  wrap column;
+    margin: auto;
+
 }
 footer p {
 
@@ -447,5 +447,6 @@ footer p {
 
 footer > span{
 
+  
    
 }
