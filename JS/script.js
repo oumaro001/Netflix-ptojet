@@ -75,6 +75,32 @@ function trierTableau(arr) {
     });
 }
 
+/**
+ * ***********************************  VIDEO LOGO NETFLIX ACCEUIL ********************************************
+ */
+
+let page_acceuil = document.getElementById('page_acceuil'); /** le contenu de la page */
+let video_container = document.querySelector('.video-container'); /* div de la video logo */
+
+document.addEventListener('DOMContentLoaded', (event) => { 
+
+    setTimeout(() => {
+
+        video_container.style.display = "block";
+
+        setTimeout(() => {
+            
+            video_container.style.display = "none";
+            page_acceuil.style.display = "block";
+            page_acceuil.style.transition = "2s all"
+
+
+            
+        }, 4000); //  durée de la video
+    }, 200); // durés avant l'affichage de la page d'acceuil
+
+});
+
 
 
 /**
@@ -127,7 +153,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             button_show.textContent = "Voir +";
             title_video.appendChild(button_show);
         }, 2000); // 1500 millisecondes = 1,5 secondes (durée de la transition de flou)
-    }, 3000); // 2000 millisecondes = 2 secondes avant de commencer la transition de flou
+    }, 6000); // 2000 millisecondes = 2 secondes avant de commencer la transition de flou
 
 });
 
