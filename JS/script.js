@@ -184,7 +184,7 @@ function filmPopulaire() {
                 let img = document.createElement('div');
                 img.classList.add('img_film_tendance');
 
-                img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+                img.innerHTML = `<a href="result_by_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
 
                 film_tendence.appendChild(img);
 
@@ -227,7 +227,7 @@ function seriePopulaire() {
                 let img = document.createElement('div');
                 img.classList.add('img_serie_tendance');
 
-                img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+                img.innerHTML = `<a href="result_by_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
 
                 serie_tendence.appendChild(img);
 
@@ -274,7 +274,7 @@ fetch(url, { method: 'GET', headers })
         let img = document.createElement('div');
         img.classList.add('img_top_film');
 
-        img.innerHTML = `<a href="film_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
+        img.innerHTML = `<a href="result_by_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
 
         top_films.appendChild(img);
 
@@ -316,7 +316,7 @@ function Bientôt_Film(){
             let img = document.createElement('div');
             img.classList.add('img_Bientot_film');
     
-            img.innerHTML = `<a href="film_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
+            img.innerHTML = `<a href="result_by_id.html?id=${results[i].id}&name=${results[i].original_title}"><img src ="${IMG_URL + results[i].poster_path}"></a>`
     
             film_bientot.appendChild(img);
     
@@ -360,7 +360,7 @@ fetch(url, { method: 'GET', headers })
         let img = document.createElement('div');
         img.classList.add('img_top_serie');
 
-        img.innerHTML = `<a href="film_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
+        img.innerHTML = `<a href="result_by_id.html?id=${tableau_trier[i].id}&name=${tableau_trier[i].original_title}"><span>${i+1}</span><img src ="${IMG_URL + tableau_trier[i].poster_path}"></a>`
 
         top_series.appendChild(img);
 
